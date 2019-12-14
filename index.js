@@ -117,9 +117,9 @@ function main() {
             try {
                 if (document.querySelector(contentSelector) && document.querySelector(contentSelector).childElementCount < 3) {
                     content = document.querySelector(contentSelector).innerText;
-                } else throw 1; //Throw error if post content has less than 3 paragraphs to be dealt with in catch
+                } else throw 1; //Throw error if post content has less than 3 paragraphs to be dealt with in catch(e)
 
-            } catch (err) {
+            } catch(e) {
 
                 if (document.querySelector(postBodySelector)) {
                     var x = document.querySelector(postBodySelector).childElementCount;
@@ -137,7 +137,7 @@ function main() {
                             if (paragraph != "") {
                                 paragraphs.push("<p>" + paragraph + "</p>");
                             }
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more paragraphs</pre>");
                         }
 
@@ -146,7 +146,7 @@ function main() {
                             if (paragraph != "") {
                                 paragraphs.push("<blockquote>" + paragraph + "</blockquote>");
                             }
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more blockqoutes</pre>");
                         }
 
@@ -157,7 +157,7 @@ function main() {
                                     paragraphs.push("<h3>" + paragraph + "</h3>");
                                 }
                             } else throw 1;
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more h3</pre>");
                         }
 
@@ -168,7 +168,7 @@ function main() {
                                     paragraphs.push("<h4>" + paragraph + "</h4>");
                                 }
                             } else throw 1;
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more h4</pre>");
                         }
 
@@ -180,7 +180,7 @@ function main() {
                                     paragraphs.push("<h5>" + paragraph + "</h5>");
                                 }
                             }
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more h5</pre>");
                         }
 
@@ -195,7 +195,7 @@ function main() {
                             });
                             paragraphs.push("</ul>");
 
-                        } catch {
+                        } catch(e) {
                             console.log("<pre>No more ul or lis</pre>");
                         }
 
